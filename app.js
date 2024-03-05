@@ -18,7 +18,7 @@ async function run(prompt) {
 
 // run();
 app.use(express.json());
-app.use(cors({ origin: "http://127.0.0.1:5500" }));
+app.use(cors({ origin: "https://shreyasbhandaril.github.io" }));
 
 app.post("/my-ai", async (req, res) => {
   const prompt = req.body.message;
