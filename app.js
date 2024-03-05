@@ -22,8 +22,13 @@ app.use(cors({ origin: "https://shreyasbhandaril.github.io" }));
 
 app.post("/my-ai", async (req, res) => {
   const prompt = req.body.message;
-  const answer = await run(prompt);
-  res.status(200).json({ response: answer });
+  try {
+    const answer = await run(prompt);
+    res.status(200).json({ response: answer });
+  } catch (error)
+  {
+    console.log("Message:", error);
+  }
 });
 
 app.listen(5000, () => {
